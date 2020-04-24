@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+	<persistence-unit name="tacheUnitDS" transaction-type="JTA">
+	    <jta-data-source>java:jboss/datasources/gestacheDS</jta-data-source>
+        <class>eu.fr.esic.formation.jpa.entity.Utilisateur</class>
+        <class>eu.fr.esic.formation.jpa.entity.Tache</class>
+        <properties>
+            <!-- Affichage des traces SQL -->
+            <property name = "hibernate.show_sql" value = "true" />
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+        </properties>
+	</persistence-unit>
+</persistence>
